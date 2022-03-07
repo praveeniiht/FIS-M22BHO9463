@@ -48,8 +48,6 @@ public class OverrideExample extends Object {
 }
 
 
-// t --> dim1 (base),dim2 (base),dim1,dim2,calArea()(base),calArea()
-
 
 
 
