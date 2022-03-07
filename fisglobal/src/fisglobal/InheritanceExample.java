@@ -1,4 +1,5 @@
 package fisglobal;
+// Is-a Relationship is provided in this code
 
 class Box2D{  // Base Class
 	int length;
