@@ -16,12 +16,12 @@ public class Student {
 	//  }
 	
 	 Student(){
-		 this("kuamr");
+		
 		 System.out.println("Inside the zero paramter contructor...");
 	 }
 
 	 Student(String name){
-		 
+		 this();
 		 this.name=name;
 		 branch="cse";
 		 showStudentData();

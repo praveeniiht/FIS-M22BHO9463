@@ -1,6 +1,6 @@
 package fisglobal;
 
-class GeoMetry{
+class GeoMetry extends Object{
 	
 	int dim1;
 	int dim2;
@@ -13,13 +13,13 @@ class GeoMetry{
 	}
 }
 
-class Rectangle extends GeoMetry{
+class Rectangle {
 	Rectangle(){
 	//	dim1=1;
 		//dim2=2;
 	}
 	public void calArea() {
-		System.out.println("The area of rectangle is : "+(dim1*dim2));
+		System.out.println("The area of rectangle is : ");
 	}
 	
 }
@@ -35,7 +35,7 @@ class Triangle extends GeoMetry{
 		System.out.println("The area of triangle is : "+(0.5*super.dim1*super.dim2));  // 12  0
 	}
 }
-public class OverrideExample {
+public class OverrideExample extends Object {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
