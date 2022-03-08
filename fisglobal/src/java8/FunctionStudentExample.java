@@ -5,10 +5,12 @@ import java.util.function.Function;
 class Student{
 	String name;
 	int marks;
+	String result;
 	public Student(String name, int marks) {
-		super();
+		
 		this.name = name;
 		this.marks = marks;
+		this.result=null;
 	}
 	
 }
@@ -18,15 +20,16 @@ public class FunctionStudentExample {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Function<Student,String> f = student->{
+		Function<Student,Student> f = student->{
 			String result =null;
 			if( student.marks >=80)
-				result="Distinction";
+				student.result="Distinction";
 			else if(student.marks >=60 && student.marks <80)
-				result="First class";
+				student.result="First class";
 			else
-				result="Fail";
-			return result;
+				student.result="Second Class";
+			
+			return student;
 		};
 		
 		Scanner sc = new Scanner(System.in);
@@ -35,7 +38,10 @@ public class FunctionStudentExample {
 		System.out.println("Enter the student marks");
 		int marks = sc.nextInt();
 		Student s = new Student(name,marks);
-		System.out.println(f.apply(s));
+		Student s1 = f.apply(s);
+		System.out.println(s1.name);
+		System.out.println(s1.marks);
+		System.out.println(s1.result);
 
 	}
 
