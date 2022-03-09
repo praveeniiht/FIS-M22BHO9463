@@ -1,4 +1,5 @@
 package java8;
+
 import java.util.Scanner;
 import java.util.function.Function;
 
