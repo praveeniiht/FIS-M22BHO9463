@@ -45,7 +45,7 @@ public class ArrayListEmployeeExample {
 			Employee e = (Employee) itr.next();
 			System.out.println(e.name+" "+e.desg);
 		}
-		
+		System.out.println(itr.next());
 		// using for loop
 		System.out.println("traversing using for loop");
 		for(Employee t: emps)
