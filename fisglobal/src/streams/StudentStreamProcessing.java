@@ -47,13 +47,17 @@ public class StudentStreamProcessing {
 		System.out.println(students);
 		
 		Stream s = students.stream();
-		List<Student> result = 
+		Stream sn = students.stream();
+	/*	List<Student> result = 
 				
-				(List<Student>) 
+			(List<Student>) 
 				 s.filter(p)
 				.map(f)
 				.collect(Collectors.toList());
 		System.out.println(result);
+			*/
+		long count = s.filter(p).map(f).count();
+		System.out.println("The count is:"+count);
 
 	}
 
