@@ -64,4 +64,10 @@ public class PostDaoImpl implements IPostDao{
 		return "Record Inserted";
 	}
 
+	@Override
+	public String deletePost(int pid) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

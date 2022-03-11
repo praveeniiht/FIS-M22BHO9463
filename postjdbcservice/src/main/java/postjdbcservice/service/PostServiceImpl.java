@@ -26,4 +26,10 @@ public class PostServiceImpl implements IPostService {
 		return dao.insertPosts(post);
 	}
 
+	@Override
+	public String deletePost(int pid) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
