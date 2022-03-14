@@ -17,5 +17,10 @@ public class SpringConfig {
 	public Engine getEngineObject() {
 		return new Engine();
 	}
+	
+	@Bean
+	public Person getPerson() {
+		return new Person("Praveen",returnAddress());
+	}
 
 }

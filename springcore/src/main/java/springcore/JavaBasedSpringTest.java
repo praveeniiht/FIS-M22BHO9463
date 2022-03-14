@@ -19,7 +19,9 @@ public class JavaBasedSpringTest {
 		g.setFuel("Petrol");
 		g.setNocl(4);
 		System.out.println(g);
-
+		
+		Person p = context.getBean(Person.class);
+		System.out.println(p);
 	}
 
 }
