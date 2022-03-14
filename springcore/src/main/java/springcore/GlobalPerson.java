@@ -31,5 +31,12 @@ public class GlobalPerson {
 		this.address = address;
 	}
 	
+	public void initMethod() {
+		System.out.println("at initialization ");
+	}
+	
+	public void destroyMethod() {
+		System.out.println("After object destroy..");
+	}
 
 }

@@ -4,12 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean class="springcore.FisAddress" id="address">
+	<bean scope="prototype" class="springcore.FisAddress" id="address">
 		<constructor-arg value="145" />
 		<constructor-arg value="Chanda Nagar" />
 		<constructor-arg value="Hyderabad" />
 	</bean>
-<bean class="springcore.GlobalPerson" id="gp" autowire="byType">
+<bean scope="prototype" class="springcore.GlobalPerson" id="gp" autowire="byType"
+init-method="initMethod" destroy-method="destroyMethod">
 	<property name="name" value="Satish" />
 	
 </bean>
