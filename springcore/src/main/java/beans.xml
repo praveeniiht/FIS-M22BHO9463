@@ -8,8 +8,60 @@
 		<property name="fuel" value="petrol" />
 		<property name="nocl" value="4" />
 		<property name="eno" value="1001" />
-
 	</bean>
+	<bean class="springcore.Country" id="country" >
+	<property name="name" value="India" />
+	<property name="states">
+	<map>
+		<entry key="MH" value="Maharastra"/>
+		<entry key="AP" value="Andhra Pradesh" />
+		<entry key="TS" value="Telengana" />
+	</map>
+	</property>
+	</bean>
+	<!-- 
+	<bean class="springcore.Country" id="country" >
+	<property name="name" value="India" />
+	
+	<property name="states">
+	
+		<list>
+			<value>Maharastra</value>
+			<value>Karnataka</value>
+			<value>TamilNadu</value>
+		</list>
+	</property>		
+	
+	</bean>
+	-->
+	
+	<bean class="springcore.FisAddress" id="fisaddr">
+		<constructor-arg value="145" />
+		<constructor-arg value="Chanda Nagar" />
+		<constructor-arg value="Hyderabad" />
+	</bean>
+	<bean class="springcore.FisPerson" id="fisper" >
+		<constructor-arg value="9090" />
+		<constructor-arg value="fisaddr" />
+	
+	</bean>
+	
+	<bean class="springcore.Address" id="address">
+		<constructor-arg value="45" />
+		<constructor-arg value="Shanti Nagar" />
+		<constructor-arg value="Hyderabad" />
+	</bean>
+	<bean class="springcore.Person" id="person">
+		<constructor-arg value="98765" />
+		<constructor-arg ref="addr" />
+	</bean>	
+	
+	<!-- 
+	<bean class="springcore.Person" id="person">
+		<property name="sid" value="5689" />
+		<property name="address" ref="addr" />
+	</bean>	
+	
 
 	<bean class="springcore.Address" id="addr">
 		<property name="dno" value="302" />
@@ -17,6 +69,6 @@
 		<property name="city" value="Bangalore" />
 
 	</bean>
-
+	-->
 
 </beans>
