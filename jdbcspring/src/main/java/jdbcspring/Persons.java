@@ -33,6 +33,10 @@ public class Persons {
 	public void setState(String state) {
 		this.state = state;
 	}
+	@Override
+	public String toString() {
+		return "Persons [name=" + name + ", city=" + city + ", state=" + state + ", pid=" + pid + "]";
+	}
 	public int getPid() {
 		return pid;
 	}
