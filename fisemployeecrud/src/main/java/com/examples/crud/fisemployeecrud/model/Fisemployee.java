@@ -19,19 +19,20 @@ public class Fisemployee {
 
 	String department;
 	
-	String desgination;
+	@Column(name="desgination")
+	String designation;
 	
 	
 	public Fisemployee() {
 		
 	}
 	
-	public Fisemployee(int empid, String name, String department, String desgination) {
+	public Fisemployee(int empid, String name, String department, String designation) {
 		super();
 		this.empid = empid;
 		this.name = name;
 		this.department = department;
-		this.desgination = desgination;
+		this.designation = designation;
 	}
 
 
@@ -61,12 +62,14 @@ public class Fisemployee {
 	}
 
 	public String getDesignation() {
-		return desgination;
+		return designation;
 	}
 
 	public void setDesignation(String designation) {
-		this.desgination = desgination;
+		this.designation = designation;
 	}
+
+	
 	
 
 
