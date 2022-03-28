@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.postservice.model.CommentsDto;
 import com.example.postservice.model.Posts;
 import com.example.postservice.service.PostService;
 
@@ -47,5 +48,18 @@ public class PostController {
 	@GetMapping("/search/title/{title}")
 	public ResponseEntity<List<Posts>> getAllPostsByTitle(@PathVariable("title") String title){
 		return new ResponseEntity(service.searchPostsByTitle(title), HttpStatus.OK);
+	}
+	
+	@GetMapping("/search/author/title/{title}")
+	public ResponseEntity<List<String>> getAllAuthorsByTitle(@PathVariable("title") String title){
+		
+		return new ResponseEntity(service.seachAuthorsByTitle(title), HttpStatus.OK);
+	}
+	
+	
+	@GetMapping("/search/comments/pid/{pid}")
+	public ResponseEntity<List<CommentsDto>> getAllCommentsByPid(@PathVariable("pid") int pid){
+		
+		return new ResponseEntity(service.searchCommentsByPid(pid), HttpStatus.OK);
 	}
 }
