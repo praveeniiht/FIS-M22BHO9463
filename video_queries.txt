@@ -1,0 +1,73 @@
+1. create a procedure which should return complete details 
+   of the movie given movieid as input.
+
+2. Create a cursor which should display all the movies hired
+   by a particular customer.
+
+3. Fire a trigger, before insert for each row, that it should
+   warn the user when they are inserting a horror movie.
+
+
+
+create or replace procedure movieinfo(tmovieid in varchar) is
+mrow video_movies_master%rowtype;
+begin
+select * into mrow from video_movies_master where 
+movie_id=tmovieid;
+dbms_output.put_line('Movie id: '||mrow.movie_id);
+dbms_output.put_line('Movie Name: '||mrow.movie_name);
+dbms_output.put_line('Release Date: '||mrow.RELEASE_DATE);
+dbms_output.put_line('Language: '||mrow.LANGUAGE);
+dbms_output.put_line('Rating: '||mrow.RATING);
+dbms_output.put_line('Duration: '||mrow.DURATION);
+dbms_output.put_line('Movie Type: '||mrow.MOVIE_TYPE);
+dbms_output.put_line('Category: '||mrow.MOVIE_CATEGORY);
+dbms_output.put_line('Actor: '||mrow.LEAD_ROLE_1);
+dbms_output.put_line('Rent: '||mrow.RENT_COST);
+end;
+
+create or replace procedure cardinfo(cid in varchar) is 
+type customercard is record(
+cid video_customer_card_details%type;
+lamount video_library_card_master.amount%type;
+ldesc video_library_card_master.description%type;
+lyears vvideo_library_card_master.number_of_years%type;
+);
+
+crec customercard;
+begin
+SELECT c.customer_id, c.card_id, l.description, 
+l.amount, l.number_of_years into crec from video_customer_card_details c 
+inner join video_library_card_master l on l.card_id=c.card_id 
+where c.customeR_id=cid;
+
+dbms_output.put_line(crec.cid);
+end;
+
+
+
+create or replace procedure movielist(custid in varchar) is
+
+ TYPE r_movies_type IS RECORD(
+        name varchar;
+    ); 
+
+ TYPE movies_list_type  IS VARRAY(20) OF r_movies_type;
+ 
+movies movies_list;
+
+cursor c is select distinct mm.movie_name into movies from video_movies_master mm 
+join video_customer_issue_details cd on cd.movie_id=mm.movie_id
+join video_customer_master cm on cm.customer_id = cd.customer_id
+order by mm.movie_name;
+
+begin
+open c;
+
+loop
+fetch c into movies
+dbms_output.put_line(mvs)
+exit when c%notfound;
+end loop;
+end;
+
