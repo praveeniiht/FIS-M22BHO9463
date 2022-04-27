@@ -1,0 +1,31 @@
+Dockerfile
+----------
+
+1. FROM -- used to specify the base image
+
+2. MAINTAINER -- used to describe the author
+
+3. RUN --- used to execute any linux based command
+
+WORKDIR /VAR/TEMP
+
+
+4. ADD -- is used to copy the contents from the host machine to container
+
+5. COPY -- ditto
+
+6. EXPOSE --
+
+7. VOLUME --- 
+
+8. USER --- 
+
+9. WORKDIR ---
+
+10. ENV
+
+11. CMD
+
+
+	
+
