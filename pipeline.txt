@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('build') {
+            steps {
+                echo 'checkout the code from the git'
+                dir('c://jenkinsdata') {
+                            // some block
+                }
+                git branch: 'main', url: 'https://github.com/praveeniiht/jenkinsdata.git'
+            
+            }
+        }
+         stage('deploy') {
+            steps {
+                echo 'jar file is built from the checout code'
+                   
+                
+            }
+        }
+         stage('deliver') {
+            steps {
+                echo 'create the docker continer and run the application'
+               build 'demo'
+              
+            }
+        }
+    }
+}
